@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 children: <Widget>[
                   Image.asset('assets/food.jpg'),
-                  Text('Food Paradise')
+                  Text('Food Good')
                 ],
               ),
             )
