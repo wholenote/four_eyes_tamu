@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('EasyList'),
+          title: Text('HARDList'),
         ),
         body: Column(
           children: [
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
                 children: <Widget>[
                   Image.asset('assets/food.jpg'),
                   Text('Food Paradise')
-                  Text('PAPA')
+                  Text('PAPA'),
                 ],
               ),
             )
