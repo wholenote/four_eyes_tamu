@@ -38,6 +38,7 @@ class _MyAppState extends State<MyApp> {
                 children: <Widget>[
                   Image.asset('assets/food.jpg'),
                   Text('Food Paradise')
+                  Text('PAPA')
                 ],
               ),
             )
