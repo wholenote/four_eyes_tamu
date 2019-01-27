@@ -17,12 +17,14 @@ class FirstRoute extends StatefulWidget {
 }
 class _FirstRoute extends State<FirstRoute> {
   File _image;
-
+  String _sample;
+  
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
+    String sample = "testText";
     setState(() {
       _image = image;
+      _sample = sample;
     });
   }
 
@@ -46,7 +48,7 @@ class _FirstRoute extends State<FirstRoute> {
                   getImage();
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondRoute(_image)),
+                    MaterialPageRoute(builder: (context) => SecondRoute(_image, _sample)),
                   );
                 },
               ),
@@ -61,8 +63,9 @@ class _FirstRoute extends State<FirstRoute> {
 
 class SecondRoute extends StatefulWidget {
   final File img;
-
-  SecondRoute(this.img);
+  final String sampleText;
+  
+  SecondRoute(this.img, this.sampleText);
   @override
   State<StatefulWidget> createState() {
     return _SecondRoute();
