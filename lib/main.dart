@@ -28,8 +28,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Captioner'),
-          backgroundColor: Color.fromRGBO(255, 192, 203, 1),
+          backgroundColor: Color.fromRGBO(55,71,133, 1)
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
