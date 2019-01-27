@@ -26,7 +26,10 @@ class _MyAppState extends State<MyApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: FloatingActionButton(
+              child: IconButton(
+                splashColor: Color.fromRGBO(55, 71, 133, 1),
+                iconSize: 100,
+                icon: Icon(Icons.add_a_photo,),
                 onPressed: () {
 
                 },
