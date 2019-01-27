@@ -9,10 +9,21 @@ void main() {
   ));
 }
 
-class FirstRoute extends StatelessWidget {
+class FirstRoute extends StatefulWidget {
   @override
+  State<StatefulWidget> createState() {
+    return _FirstRoute();
+  }
+}
+class _FirstRoute extends State<FirstRoute> {
+  File _image;
+
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      _image = image;
+    });
   }
 
   Widget build(BuildContext context) {
@@ -35,7 +46,7 @@ class FirstRoute extends StatelessWidget {
                   getImage();
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondRoute()),
+                    MaterialPageRoute(builder: (context) => SecondRoute(_image)),
                   );
                 },
               ),
@@ -47,7 +58,21 @@ class FirstRoute extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
+
+class SecondRoute extends StatefulWidget {
+  final File img;
+
+  SecondRoute(this.img);
+  @override
+  State<StatefulWidget> createState() {
+    return _SecondRoute();
+  }
+}
+class _SecondRoute extends State<SecondRoute> {
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +80,7 @@ class SecondRoute extends StatelessWidget {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
+        child: Image.file(widget.img)
       ),
     );
   }
