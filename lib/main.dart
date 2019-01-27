@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +14,16 @@ class MyApp extends StatefulWidget {
   }
 }
 class _MyAppState extends State<MyApp> {
-  List<String> products = ['Food Tester'];
+  File _image;
 
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
 
+    setState(() {
+      _image = image;
+    });
+  }
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -31,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                 iconSize: 100,
                 icon: Icon(Icons.add_a_photo,),
                 onPressed: () {
-
+                  getImage();
                 },
               ),
             ),
