@@ -15,36 +15,27 @@ class _MyAppState extends State<MyApp> {
   List<String> products = ['Food Tester'];
 
 
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('HARDList'),
+          title: Text('Captioner'),
+          backgroundColor: Color.fromRGBO(255, 192, 203, 1),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.all(10.0),
-              child: RaisedButton(
+            Center(
+              child: FloatingActionButton(
                 onPressed: () {
 
                 },
-                child: Text('Add Product'),
               ),
             ),
-            Card(
-              child: Column(
-                children: <Widget>[
-                  Image.asset('assets/food.jpg'),
-                  Text('Food Paradise')
-                  Text('PAPA'),
-                ],
-              ),
-            )
           ],
         ),
       ),
     );
   }
 }
+
