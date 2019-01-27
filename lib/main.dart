@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Captioner'),
+          title: Text('Captoner'),
           backgroundColor: Color.fromRGBO(55,71,133, 1)
         ),
         body: Column(
